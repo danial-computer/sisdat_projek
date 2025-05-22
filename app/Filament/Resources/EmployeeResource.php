@@ -26,7 +26,7 @@ class EmployeeResource extends Resource
     {
         return $form
             ->schema([
-                Select::make('countries_id')
+                Select::make('country_id')
                     ->relationship('country', 'name')
                     ->required(),
                 Select::make('state_id')
@@ -61,16 +61,32 @@ class EmployeeResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('id')->sortable(),
-                TextColumn::make('first_name')->searchable()->sortable(),
-                TextColumn::make('last_name')->searchable()->sortable(),
-                TextColumn::make('country.name')->label('Country')->sortable(),
-                TextColumn::make('state.name')->label('State')->sortable(),
-                TextColumn::make('city.name')->label('City')->sortable(),
-                TextColumn::make('department.name')->label('Department')->sortable(),
-                TextColumn::make('zip_code'),
-                TextColumn::make('birth_date')->date(),
-                TextColumn::make('date_hired')->date(),
+                TextColumn::make('id')
+                ->sortable(),
+                TextColumn::make('first_name')
+                ->searchable()
+                ->sortable(),
+                TextColumn::make('last_name')
+                ->searchable()
+                ->sortable(),
+                TextColumn::make('country.name')
+                ->label('Country')
+                ->sortable(),
+                TextColumn::make('state.name')
+                ->label('State')
+                ->sortable(),
+                TextColumn::make('city.name')
+                ->label('City')
+                ->sortable(),
+                TextColumn::make('department.name')
+                ->label('Department')
+                ->sortable(),
+                TextColumn::make('zip_code')
+                ->label('Kode pos'),
+                TextColumn::make('birth_date')
+                ->date(),
+                TextColumn::make('date_hired')
+                ->date(),
             ])
             ->filters([
                 // add filters here

@@ -14,12 +14,12 @@ class EditCountry extends EditRecord
     {
         return [
             TextInput::make('country_code')
-                ->label('Code')
+                ->label('Country Code')
                 ->required()
-                ->maxLength(3),
+                ->maxLength(5),
 
             TextInput::make('name')
-                ->label('Name')
+                ->label('Country Name')
                 ->required()
                 ->maxLength(255),
         ];

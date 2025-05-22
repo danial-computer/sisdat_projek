@@ -6,13 +6,13 @@ use App\Filament\Resources\CountryResource\Pages;
 use App\Filament\Resources\CountryResource\RelationManagers\EmployeesRelationManager;
 use App\Filament\Resources\CountryResource\RelationManagers\StatesRelationManager;
 use App\Models\Country;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
-use Filament\Tables\Actions\CreateAction;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Actions\CreateAction;
 
 class CountryResource extends Resource
 {
@@ -46,6 +46,10 @@ class CountryResource extends Resource
                     ->label('Country Name')
                     ->sortable()
                     ->searchable(),
+                    TextColumn::make('country_code')
+                    ->label('Country Name')
+                    ->sortable()
+                    ->searchable()
             ])
             ->headerActions([
                 CreateAction::make(),

@@ -4,12 +4,13 @@ namespace App\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Tables\Table;
 use Filament\Tables;
+use Filament\Tables\Table;
 use App\Filament\Resources\CityResource\Pages;
 use App\Filament\Resources\CityResource\RelationManagers\EmployeesRelationManager;
 use App\Models\City;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Actions\CreateAction;
 
@@ -26,7 +27,10 @@ class CityResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->label('City Name')
                     ->required()
-                    ->maxLength(255)
+                    ->maxLength(255),                
+                Select::make('state_id')
+                    ->relationship('state', 'name')
+                    ->required(),
             ]);
     }
 

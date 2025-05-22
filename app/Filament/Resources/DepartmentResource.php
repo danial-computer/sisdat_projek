@@ -31,9 +31,6 @@ class DepartmentResource extends Resource
                     ->label('Department Name')
                     ->required()
                     ->maxLength(255),
-                Select::make('employees_id')
-                    ->relationship('employee', 'name')
-                    ->required(),
             ]);
     }
 
