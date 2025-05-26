@@ -17,7 +17,7 @@ class Employee extends Model
         'state_id',
         'city_id',
         'department_id',
-        'zip_code',
+        'zip_code', 
         'birth_date',
         'date_hired'
     ];
@@ -26,6 +26,7 @@ class Employee extends Model
     {
         return $this->belongsTo(State::class);
     }
+
     public function country()
     {
         return $this->belongsTo(Country::class);
